@@ -2,59 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <title></title> -->
+    <meta name="description" content="Running list of Aussie-isms converted to American.">
+    <meta name="keywords" content="Aussie, American, lingo">
+    <meta name="author" content="Danny White">
+    <title>Aussie / American</title>
     <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
-    <style media="screen">
-      body {
-        font-family: 'Montaga', serif;
-        text-align: center;
-        max-width: 1440px;
-        margin: 3rem auto;
-      }
-      h1 {
-        font-size: 6.25vw;
-      }
-      h1 span:first-of-type {
-        color: blue;
-      }
-      h1 span:last-of-type {
-        color: red;
-      }
-      p {
-        font-size: 3vw;
-        max-width: 600px;
-        margin: 0 auto 6.25vw;
-
-      }
-
-      table {
-        width: 100%;
-        font-size: 6.25vw;
-        border-collapse:collapse
-      }
-
-      tr {
-        border-bottom: 1px solid rgba(0,0,0,0.5);
-      }
-
-
-      td {
-        width: 50%;
-        padding-bottom: 12pt;
-
-      }
-
-      th:first-of-type,
-      td:first-of-type {
-        text-align: left;
-        color: blue;
-      }
-      th:last-of-type,
-      td:last-of-type {
-        text-align: right;
-        color: red;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -72,10 +25,7 @@
         </tr>
       </thead>
       <tbody id="tableBody">
-        <tr>
-          <!-- <td>Word Aussie</td>
-          <td>Word American</td> -->
-        </tr>
+        <!-- Filled via tabletop.js -->
       </tbody>
     </table>
 
@@ -92,32 +42,19 @@
                          simpleSheet: true } )
       }
 
-
       function showInfo(data, tabletop) {
-        // alert('Successfully processed!')
-        // for (var i = 0; i < data.length; i++) {
-        //   console.log(data[i]);
-        // }
-
         // How many rows of data are there?
-        amountOfRows = data.length;
-        console.log(amountOfRows);
+        // console.log(data.length);
 
-        // Create X rows, each with two <td></td>
+        // For each row...
         for (var row = 0; row < data.length; row++) {
-          console.log(data[row].Aussie);
-          document.getElementById("tableBody").innerHTML += "<td>"+ data[row].Aussie +"</td><td>"+ data[row].American +"</td>";
-        } {
-
+          // console.log(data[row].Aussie);
+          // Create X rows, each with two <td></td>
+          // Fill the <td></td> with data[i].Aussie data[i].American respectively
+          document.getElementById("tableBody").innerHTML +=
+          "<td>"+ data[row].Aussie +"</td><td>"
+          + data[row].American +"</td>";
         }
-
-        // Fill the <td></td> with data[i].Aussie data[i].American respectively
-
-
-
-
-
-
       }
 
       window.addEventListener('DOMContentLoaded', init)
