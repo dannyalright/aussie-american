@@ -1,20 +1,15 @@
----
-title: Aussie-American / 🇦🇺–🇺🇸
-permalink: "/aussie-american/"
-feature: true
----
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <!-- <title></title> -->
-    <link rel="stylesheet" href="{{ "/assets/normalize.css" | relative_url }}">
     <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
     <style media="screen">
       body {
         font-family: 'Montaga', serif;
         text-align: center;
+        max-width: 1440px;
+        margin: 3rem auto;
       }
       h1 {
         font-size: 6.25vw;
@@ -63,6 +58,7 @@ feature: true
   </head>
 
   <body>
+
     <h1><span>Aussie</span> / <span>American</span></h1>
     <p>
       A few things I've picked up over the last 2+ years here in the USA.
@@ -75,18 +71,56 @@ feature: true
           <th>🇺🇸</th>
         </tr>
       </thead>
-      <tbody>
-        {% for word in site.data.aussie-american %}
+      <tbody id="tableBody">
         <tr>
-          <td>{{ word.aussie }}</td>
-          <td>{{ word.american }}</td>
+          <!-- <td>Word Aussie</td>
+          <td>Word American</td> -->
         </tr>
-        {% endfor %}
       </tbody>
     </table>
 
-    {% if jekyll.environment == 'production' %}
-      {% include analytics.html %}
-    {% endif %}
+<div id="data"></div>
+
+  <!-- Tabletop -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'>
+      var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/10ylThLHua_sD_QqdaYw9BpIlS2wQ-1G2HfCeds5roAM/pubhtml';
+
+      function init() {
+        Tabletop.init( { key: publicSpreadsheetUrl,
+                         callback: showInfo,
+                         simpleSheet: true } )
+      }
+
+
+      function showInfo(data, tabletop) {
+        // alert('Successfully processed!')
+        // for (var i = 0; i < data.length; i++) {
+        //   console.log(data[i]);
+        // }
+
+        // How many rows of data are there?
+        amountOfRows = data.length;
+        console.log(amountOfRows);
+
+        // Create X rows, each with two <td></td>
+        for (var row = 0; row < data.length; row++) {
+          console.log(data[row].Aussie);
+          document.getElementById("tableBody").innerHTML += "<td>"+ data[row].Aussie +"</td><td>"+ data[row].American +"</td>";
+        } {
+
+        }
+
+        // Fill the <td></td> with data[i].Aussie data[i].American respectively
+
+
+
+
+
+
+      }
+
+      window.addEventListener('DOMContentLoaded', init)
+    </script>
   </body>
 </html>
