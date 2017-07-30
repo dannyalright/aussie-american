@@ -1,4 +1,4 @@
-# aussie-american
+# Aussie / American
 Running list of Aussie-isms converted to American.
 
 ## Source

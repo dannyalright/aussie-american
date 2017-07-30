@@ -1,0 +1,49 @@
+body {
+  font-family: 'Montaga', serif;
+  text-align: center;
+  max-width: 1440px;
+  margin: 3rem auto;
+}
+h1 {
+  font-size: 6.25vw;
+}
+h1 span:first-of-type {
+  color: blue;
+}
+h1 span:last-of-type {
+  color: red;
+}
+p {
+  font-size: 3vw;
+  max-width: 600px;
+  margin: 0 auto 6.25vw;
+
+}
+
+table {
+  width: 100%;
+  font-size: 6.25vw;
+  border-collapse:collapse
+}
+
+tr {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+
+td {
+  width: 50%;
+  padding-bottom: 12pt;
+
+}
+
+th:first-of-type,
+td:first-of-type {
+  text-align: left;
+  color: blue;
+}
+th:last-of-type,
+td:last-of-type {
+  text-align: right;
+  color: red;
+}
