@@ -25,7 +25,8 @@ p {
 table {
   width: 100%;
   font-size: 6.25vw;
-  border-collapse:collapse
+  border-collapse: collapse;
+  margin-bottom: 2rem;
 }
 tr {
   border-bottom: 1px solid rgba(0,0,0,0.5);
@@ -44,4 +45,8 @@ th:last-of-type,
 td:last-of-type {
   text-align: right;
   color: red;
+}
+
+small a {
+  color: blue;
 }
