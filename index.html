@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="A running list of Aussie-isms converted to American.">
-    <meta name="keywords" content="Aussie, American, lingo">
-    <meta name="author" content="Danny White">
 
-    <title>Aussie / American</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A running list of Aussie-isms converted to American.">
+  <meta name="keywords" content="Aussie, American, lingo">
+  <meta name="author" content="Danny White">
 
-    <!-- Open Graph meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://dannywhite.site/aussie-american" />
-    <meta property="og:title" content="Aussie / American" />
-    <meta property="og:description" content="A running list of Aussie-isms converted to American.">
-    <meta property="og:image" content="http://dannywhite.site/aussie-american/simpsons.jpg">
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="600" />
-    <meta property="og:site_name" content="Danny White" />
-    <meta property="og:locale" content="en_GB" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@dannyalright" />
-    <meta name="twitter:creator" content="@dannyalright" />
+  <title>Aussie / American</title>
 
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+  <!-- Open Graph meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://dannywhite.site/aussie-american" />
+  <meta property="og:title" content="Aussie / American" />
+  <meta property="og:description" content="A running list of Aussie-isms converted to American.">
+  <meta property="og:image" content="http://dannywhite.site/aussie-american/simpsons.jpg">
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:site_name" content="Danny White" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@dannyalright" />
+  <meta name="twitter:creator" content="@dannyalright" />
 
-  <body>
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <h1><span>Aussie</span> / <span>American</span></h1>
-    <p>A few things picked up over the last 3+ years here in the USA.</p>
+<body>
 
-    <table>
-      <thead>
-        <tr>
-          <th>🇦🇺</th>
-          <th>🇺🇸</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Filled via tabletop.js -->
-      </tbody>
-    </table>
+  <h1><span>Aussie</span> / <span>American</span></h1>
+  <p>A few things picked up over the last 3+ years here in the USA.</p>
 
-    <!-- No JS -->
-    <noscript>
-      <p>Bugger! You need to enable JavaScript to see this list.</p>
-    </noscript>
+  <table>
+    <thead>
+      <tr>
+        <th>🇦🇺</th>
+        <th>🇺🇸</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Filled via tabletop.js -->
+    </tbody>
+  </table>
 
-    <small>
-      A project by <a href="http://dannywhite.site">Danny White</a> and mates.
-      Got some Aussie / American-isms to add? <a href="https://docs.google.com/spreadsheets/d/10ylThLHua_sD_QqdaYw9BpIlS2wQ-1G2HfCeds5roAM/edit?usp=sharing">Please do</a>.
-    </small>
+  <!-- No JS -->
+  <noscript>
+    <p>Bugger! You need to enable JavaScript to see this list.</p>
+  </noscript>
 
-    <!-- Pull down Tabletop -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <!-- Use Tabletop on Google Sheet -->
-    <script type='text/javascript'>
-      var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/10ylThLHua_sD_QqdaYw9BpIlS2wQ-1G2HfCeds5roAM/pubhtml';
+  <small>
+    A project by <a href="http://dannywhite.site">Danny White</a> and mates. Got some Aussie / American-isms to add? <a href="https://docs.google.com/spreadsheets/d/10ylThLHua_sD_QqdaYw9BpIlS2wQ-1G2HfCeds5roAM/edit?usp=sharing">Please
+      do</a>.
+  </small>
 
-      function init() {
-        Tabletop.init( { key: publicSpreadsheetUrl,
-                         callback: showInfo,
-                         simpleSheet: true } )
+  <!-- Pull down Tabletop -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <!-- Use Tabletop on Google Sheet -->
+  <script type='text/javascript'>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/10ylThLHua_sD_QqdaYw9BpIlS2wQ-1G2HfCeds5roAM/pubhtml';
+
+    function init() {
+      Tabletop.init({
+        key: publicSpreadsheetUrl,
+        callback: showInfo,
+        simpleSheet: true
+      })
+    }
+
+    function showInfo(data, tabletop) {
+      // How many rows of data are there?
+      // console.log(data.length);
+
+      // For each row...
+      for (var row = 0; row < data.length; row++) {
+        // console.log(data[row].Aussie);
+        // Create X rows, each with two <td></td>
+        // Fill the <td></td> with data[i].Aussie data[i].American respectively
+        document.getElementById("tableBody").innerHTML +=
+          "<td>" + data[row].Aussie + "</td><td>"
+          + data[row].American + "</td>";
       }
+    }
 
-      function showInfo(data, tabletop) {
-        // How many rows of data are there?
-        // console.log(data.length);
+    window.addEventListener('DOMContentLoaded', init)
+  </script>
+</body>
 
-        // For each row...
-        for (var row = 0; row < data.length; row++) {
-          // console.log(data[row].Aussie);
-          // Create X rows, each with two <td></td>
-          // Fill the <td></td> with data[i].Aussie data[i].American respectively
-          document.getElementById("tableBody").innerHTML +=
-          "<td>"+ data[row].Aussie +"</td><td>"
-          + data[row].American +"</td>";
-        }
-      }
-
-      window.addEventListener('DOMContentLoaded', init)
-    </script>
-    <!-- Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-42400447-2', 'auto');
-      ga('send', 'pageview');
-    </script>
-  </body>
 </html>
